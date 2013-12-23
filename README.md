@@ -29,9 +29,15 @@ Add a `[user]` section to `.git/config` with the email address to be used for th
 	email = nokome.bentley@example.com
 ```
 
+Add Github as a remote
+
+```sh
+git remote add origin git@github.com:nokome/foo.git
+```
+
 ## git-flow
 
-`git-flow` is a "collection of Git extensions to provide high-level repository operations for Vincent Driessen's branching model"
+`git-flow` is a "collection of Git extensions to provide high-level repository operations for Vincent Driessen's branching model". It can be useful for projects which have distinct release cycles. It may not be so useful for projects with continuous deployment.
 
 * [Vincent Driessen's branching model](http://nvie.com/git-model)
 * [Why aren't you using git-flow?](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/)
