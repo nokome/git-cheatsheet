@@ -1,4 +1,6 @@
-# git-cheatsheet : a personal cheatsheet for Git
+# git-cheatsheet
+
+A personal cheatsheet for Git
 
 ## Installation
 
@@ -31,6 +33,7 @@ Add a `[user]` section to `.git/config` with the email address to be used for th
 
 `git-flow` is a "collection of Git extensions to provide high-level repository operations for Vincent Driessen's branching model"
 
+* [Vincent Driessen's branching model](http://nvie.com/git-model)
 * [Why aren't you using git-flow?](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/)
 * [Atlassian's guide](https://www.atlassian.com/git/workflows#!workflow-gitflow)
 * [Daniel Kummer's Gitflow cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/)
@@ -45,4 +48,4 @@ Initialise git-flow for this repo with the default values
 
 ```sh
 git flow init -d
-``
+```
