@@ -4,13 +4,22 @@ A personal cheatsheet for Git
 
 ## Installation
 
-Install git
+Install [git](http://git-scm.com/)
 
 ```sh
 sudo apt-get install git
 ```
 
-## New repo
+Install [Legit](http://www.git-legit.org/).
+Legit provides a git shortcuts for a simple branching workflow. 
+An alternative is [git-flow](https://github.com/nvie/gitflow) based on [Vincent Driessen's branching model](http://nvie.com/git-model) but I find that somewhat convoluted for my needs.
+
+```sh
+sudo pip install legit
+install legit
+```
+
+## Creating
 
 Create a new git repository
 
@@ -35,23 +44,42 @@ Add Github as a remote
 git remote add origin git@github.com:nokome/foo.git
 ```
 
-## git-flow
+## Branching
 
-`git-flow` is a "collection of Git extensions to provide high-level repository operations for Vincent Driessen's branching model". It can be useful for projects which have distinct release cycles. It may not be so useful for projects with continuous deployment.
+`git sprout [<branch>] <new-branch>`
+    Creates a new branch off of the specified branch.
+    Swiches to it immediately.
 
-* [Vincent Driessen's branching model](http://nvie.com/git-model)
-* [Why aren't you using git-flow?](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/)
-* [Atlassian's guide](https://www.atlassian.com/git/workflows#!workflow-gitflow)
-* [Daniel Kummer's Gitflow cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/)
+`git publish <branch>`
+    Publishes specified branch to the remote.
 
-Install [git-flow](https://github.com/nvie/gitflow)
+`git branches`
+    Get a nice pretty list of available branches.
 
-```sh
-sudo apt-get install git-flow
+`git sync [<branch>]`
+    Syncronizes the given branch. Defaults to current branch.
+    Stash, Fetch, Auto-Merge/Rebase, Push, and Unstash.
+    You can only sync published branches.
+
+`git switch <branch>`
+    Switches to specified branch.
+    Defaults to current branch.
+    Automatically stashes and unstashes any changes.
+
+`git harvest [<branch>] <into-branch>`
+    Auto-Merge/Rebase of specified branch changes into the second branch.
+
+`git graft <branch> <into-branch>`
+    Auto-Merge/Rebase of specified branch into the second branch.
+    Immediately removes specified branch. You can only graft unpublished branches.
+
+`git unpublish <branch>`
+    Removes specified branch from the remote.
+
+
+## Tagging
+
 ```
-
-Initialise git-flow for this repo with the default values
-
-```sh
-git flow init -d
+git tag -a '0.x' -m '0.x'
+git push --tags
 ```
