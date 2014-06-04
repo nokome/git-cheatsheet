@@ -76,6 +76,8 @@ git remote add origin git@github.com:nokome/foo.git
 `git unpublish <branch>`
     Removes specified branch from the remote.
 
+`git branch --delete <branch>`
+    Removes specified branch locally.
 
 ## Tagging
 
